@@ -1,0 +1,17 @@
+#import <Foundation/Foundation.h>
+ 
+int main(void)
+{
+NSString *str = @"Melanie Cummings";
+NSMutableString *revStr = [NSMutableString string]; //a string that can be modified and become the new string
+NSInteger charIndex = [str length]; //an index that represents the current character in the string
+
+    while (charIndex > 0) {//when the current index is not at the first char
+    charIndex--; //keep iterating back from last char until at char 0
+    NSRange range = NSMakeRange(charIndex, 1);//the selected range of indeces to be mod and quantity of chars to be used i nmodification
+        
+    [revStr appendString:[str substringWithRange:range]];//append the largest singe index to smallest until at char 0 to the beginning of the empty mutable string
+}
+    
+NSLog(@"%@", revStr);
+}
